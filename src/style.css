@@ -1,0 +1,12 @@
+.image_name {
+  display: flex;
+  flex-direction: row;
+}
+
+.makeStyles-bigAvatar-1 {
+    margin-top: 20px !important;
+}
+
+html, main{
+  background-color: #2c2c2c;
+}

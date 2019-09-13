@@ -1,8 +1,9 @@
 import React from "react";
-import Intro from "./components/Page";
+import PersistentDrawerLeft from "./components/Page";
+import './style.css'
 
 function App() {
-  return <Intro />;
+  return <PersistentDrawerLeft />;
 }
 
 export default App;
