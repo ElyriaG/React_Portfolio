@@ -1,9 +1,18 @@
 import React from "react";
-import PersistentDrawerLeft from "./components/Page";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Homepage";
+import Resume from "./pages/resume";
 import './style.css'
 
 function App() {
-  return <PersistentDrawerLeft />;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />} />
+        <Route exact path="/resume" component={Resume} />} />
+        </Switch>
+    </Router>
+  )
 }
 
 export default App;

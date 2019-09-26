@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
@@ -15,10 +15,12 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import MailIcon from '@material-ui/icons/Mail';
 import Avatar from '@material-ui/core/Avatar';
-// import Grid from '@material-ui/core/Grid';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
+
 
 const drawerWidth = 240;
 
@@ -75,23 +77,22 @@ const useStyles = makeStyles(theme => ({
         }),
         marginLeft: -drawerWidth,
     },
-    typography: {
-        background: 'linear-gradient(45deg, #808080 10%, #ffffff 40%, #808080 80%)',
-        padding: 20
-    },
     contentShift: {
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
         marginLeft: 0,
-    },
+    }
 }));
 
-function PersistentDrawerLeft() {
-    const classes = useStyles();
+
+export default function LeftDrawer(props) {
+    const [open, setOpen] = useState(false);
+
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    const classes = useStyles()
+
 
     function handleDrawerOpen() {
         setOpen(true);
@@ -102,8 +103,7 @@ function PersistentDrawerLeft() {
     }
 
     return (
-        <div className={classes.root}>
-            <CssBaseline />
+        <div>
             <AppBar
                 position="fixed"
                 className={clsx(classes.appBar, {
@@ -127,7 +127,10 @@ function PersistentDrawerLeft() {
                         </div>
                     </Typography>
                 </Toolbar>
+
+
             </AppBar>
+
             <Drawer
                 className={classes.drawer}
                 variant="persistent"
@@ -135,65 +138,52 @@ function PersistentDrawerLeft() {
                 open={open}
                 classes={{
                     paper: classes.drawerPaper,
-                }}
-            >
+                }}>
                 <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
-                <Divider />
-                <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
-            <main
-                className={clsx(classes.content, {
-                    [classes.contentShift]: open,
-                })}
-            >
-                <div className={classes.drawerHeader} />
-                <br />
-                <Typography paragraph className={classes.typography}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-                    facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-                    gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-                    donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-                    Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-                    imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-                    arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-                    donec massa sapien faucibus et molestie ac.
-        </Typography>
-                <Typography paragraph className={classes.typography}>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-                    facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-                    tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-                    consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-                    vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-                    hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-                    tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-                    nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-                    accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
-            </main>
-        </div>
-    );
-}
 
-export default PersistentDrawerLeft;
+
+                <Divider />
+
+
+                <List>
+                    <Link to="/resume" style={{ textDecoration: 'none', color: "black" }}>
+                        <ListItem button key={"Resume"}>
+                            <ListItemIcon> <AssignmentIndIcon /></ListItemIcon>
+                            <ListItemText primary={"Resume"} />
+                        </ListItem>
+                    </Link>
+
+                    <ListItem button key={"Email Me"}>
+                        <ListItemIcon> <MailIcon /></ListItemIcon>
+                        <ListItemText primary={"Email Me"} />
+                    </ListItem>
+                    <ListItem button key={"Portfolio"}>
+                        <ListItemIcon> <DeveloperModeIcon /></ListItemIcon>
+                        <ListItemText primary={"Portfolio"} />
+                    </ListItem>
+                </List>
+
+                <Divider />
+
+                <List>
+                    {['LinkedIn'].map((text, index) => (
+                        <ListItem button key={text}>
+                            <ListItemIcon> <LinkedInIcon /></ListItemIcon>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    ))}
+                </List>
+
+            </Drawer>
+
+
+        </div>
+    )
+};
+
+
+// export default LeftDrawer;
