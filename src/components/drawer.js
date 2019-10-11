@@ -20,13 +20,15 @@ import MailIcon from '@material-ui/icons/Mail';
 import Avatar from '@material-ui/core/Avatar';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
+import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 
 
 const drawerWidth = 240;
+const LinkedInLink = "https://www.linkedin.com/in/elyriagarcia/";
 
 const useStyles = makeStyles(theme => ({
     bigAvatar: {
-        margin: 10,
+        margin: 20,
         width: 60,
         height: 60,
     },
@@ -120,12 +122,14 @@ export default function LeftDrawer(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap >
-                        <div className="image_name">
-                            <Avatar alt="Me" src="https://i.imgur.com/n7lPJAN.jpg" className={classes.bigAvatar} />
-                            <h2>Elyria Garcia</h2>
-                        </div>
-                    </Typography>
+                    <Link to={"/"} style={{ textDecoration: 'none', color: "white" }}>
+                        <Typography variant="h6" noWrap >
+                            <div className="image_name">
+                                <Avatar alt="Me" src="https://i.imgur.com/n7lPJAN.jpg" className={classes.bigAvatar} />
+                                <h2>Elyria Garcia</h2>
+                            </div>
+                        </Typography>
+                    </Link>
                 </Toolbar>
 
 
@@ -150,6 +154,12 @@ export default function LeftDrawer(props) {
 
 
                 <List>
+                    <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
+                        <ListItem button key={"About Me"}>
+                            <ListItemIcon> <EmojiEmotionsOutlinedIcon /></ListItemIcon>
+                            <ListItemText primary={"About Me"} />
+                        </ListItem>
+                    </Link>
                     <Link to="/resume" style={{ textDecoration: 'none', color: "black" }}>
                         <ListItem button key={"Resume"}>
                             <ListItemIcon> <AssignmentIndIcon /></ListItemIcon>
@@ -161,21 +171,25 @@ export default function LeftDrawer(props) {
                         <ListItemIcon> <MailIcon /></ListItemIcon>
                         <ListItemText primary={"Email Me"} />
                     </ListItem>
-                    <ListItem button key={"Portfolio"}>
-                        <ListItemIcon> <DeveloperModeIcon /></ListItemIcon>
-                        <ListItemText primary={"Portfolio"} />
-                    </ListItem>
+                    <Link to="/portfolio" style={{ textDecoration: 'none', color: "black" }}>
+                        <ListItem button key={"Portfolio"}>
+                            <ListItemIcon> <DeveloperModeIcon /></ListItemIcon>
+                            <ListItemText primary={"Portfolio"} />
+                        </ListItem>
+                    </Link>
                 </List>
 
                 <Divider />
 
                 <List>
-                    {['LinkedIn'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon> <LinkedInIcon /></ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
+                    <a href={LinkedInLink} style={{ textDecoration: 'none', color: "black" }}>
+                        {['LinkedIn'].map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon> <LinkedInIcon /></ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </a>
                 </List>
 
             </Drawer>
