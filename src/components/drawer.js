@@ -21,10 +21,12 @@ import Avatar from '@material-ui/core/Avatar';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 
 const drawerWidth = 240;
 const LinkedInLink = "https://www.linkedin.com/in/elyriagarcia/";
+const GithubLink = "https://github.com/ElyriaG"
 
 const useStyles = makeStyles(theme => ({
     bigAvatar: {
@@ -182,7 +184,7 @@ export default function LeftDrawer(props) {
                 <Divider />
 
                 <List>
-                    <a href={LinkedInLink} style={{ textDecoration: 'none', color: "black" }}>
+                    <a href={LinkedInLink} style={{ textDecoration: 'none', color: "black" }} target="_blank" rel="noopener noreferrer">
                         {['LinkedIn'].map((text, index) => (
                             <ListItem button key={text}>
                                 <ListItemIcon> <LinkedInIcon /></ListItemIcon>
@@ -190,7 +192,16 @@ export default function LeftDrawer(props) {
                             </ListItem>
                         ))}
                     </a>
+                    <a href={GithubLink} style={{ textDecoration: 'none', color: "black" }} target="_blank" rel="noopener noreferrer">
+                        {['GitHub'].map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon> <GitHubIcon /></ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </a>
                 </List>
+
 
             </Drawer>
 
