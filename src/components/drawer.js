@@ -158,7 +158,9 @@ export default function LeftDrawer(props) {
                 <List>
                     <Link to="/" style={{ textDecoration: 'none', color: "black" }}>
                         <ListItem button key={"About Me"}>
+                            <>
                             <ListItemIcon> <EmojiEmotionsOutlinedIcon /></ListItemIcon>
+                            </>
                             <ListItemText primary={"About Me"} />
                         </ListItem>
                     </Link>
@@ -168,11 +170,12 @@ export default function LeftDrawer(props) {
                             <ListItemText primary={"Resume"} />
                         </ListItem>
                     </Link>
-
-                    <ListItem button key={"Email Me"}>
-                        <ListItemIcon> <MailIcon /></ListItemIcon>
-                        <ListItemText primary={"Email Me"} />
-                    </ListItem>
+                    <Link to="/contact" style={{ textDecoration: 'none', color: "black" }}>
+                        <ListItem button key={"Contact Me"}>
+                            <ListItemIcon> <MailIcon /></ListItemIcon>
+                            <ListItemText primary={"Contact Me"} />
+                        </ListItem>
+                    </Link>
                     <Link to="/portfolio" style={{ textDecoration: 'none', color: "black" }}>
                         <ListItem button key={"Portfolio"}>
                             <ListItemIcon> <DeveloperModeIcon /></ListItemIcon>
