@@ -12,10 +12,11 @@ const useStyles = makeStyles(theme => ({
     },
     textColor: {
         color: "white",
+        textAlign: "center", 
+        fontSize: 40
     },
     resumeDimensions: {
-        width: 700,
-        height: 900,
+        width: 1200,
         marginTop: 100,
     },
     divDimensions: {
@@ -25,7 +26,8 @@ const useStyles = makeStyles(theme => ({
     },
     gifDiv: {
         textAlign: "center", 
-        width: 600
+        width: 600,
+        color: "beige"
     },
     gifDisplay: {
         display: "inline-block"
@@ -81,13 +83,14 @@ export default function Portfolio() {
                 <div className={classes.drawerHeader} />
                 <br />
                 <div className={classes.resumeDimensions} key="pageDiv">
-                    <h2 className={classes.textColor}>My Portfolio</h2>
-                    <div className={classes.gifStuff} key="DivofGifs">
+                    <h1 className={classes.textColor}>My Portfolio</h1>
+                    <div className={classes.gifStuff} key="divOfGifs">
                         {gifInfo.map(({ name, giphy, url }) => (
 
                             <div className={classes.gifDiv}>
-                                <h1 className={classes.textColor}>{name}</h1>
+                                <h3>{name}</h3>
                                 <a href={url} target="_blank" rel="noopener noreferrer"> <img className={classes.gifDisplay} src={giphy} alt="gif" /></a>
+                                <hr style={{borderColor: "white"}} / >
                             </div>
                         ))}
                     </div>
