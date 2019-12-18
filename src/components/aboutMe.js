@@ -27,12 +27,11 @@ function AboutMe() {
 
             </Typography>
             <Typography paragraph className={classes.typographyContent}>
-                <p>
+                
                     I love making websites pretty, modern, and accessible.
-                </p>
-                <p>
+               <br />
                     Recent graduate from the Full Stack Coding Boot Camp program at Northwesten University.
-                </p>
+               
 
             </Typography>
         </>

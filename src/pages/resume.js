@@ -36,8 +36,12 @@ export default function Resume(props) {
 
     return (
         <div>
-            <CssBaseline />
-            <LeftDrawer />
+            <>
+                <CssBaseline />
+            </>
+            <>
+                <LeftDrawer />
+            </>
 
             <main
                 className={clsx(classes.content, {

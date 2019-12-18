@@ -81,16 +81,20 @@ function Home() {
             <CssBaseline />
 
             <LeftDrawer />
-    
-            <main
-                className={clsx(classes.content, {
-                    [classes.contentShift]: open,
-                })}
-            >
-                <div className={classes.drawerHeader} />
-                <br />
-                <AboutMe />
-            </main>
+
+            <>
+                <main
+                    className={clsx(classes.content, {
+                        [classes.contentShift]: open,
+                    })}
+                >
+                    <div className={classes.drawerHeader} />
+                    <br />
+                    <>
+                        <AboutMe />
+                    </>
+                </main>
+            </>
         </div>
     );
 }

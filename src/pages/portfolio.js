@@ -87,8 +87,10 @@ export default function Portfolio() {
                     <div className={classes.gifStuff} key="divOfGifs">
                         {gifInfo.map(({ name, giphy, url }) => (
 
-                            <div className={classes.gifDiv}>
+                            <div className={classes.gifDiv} key="thingy2">
+                                <>
                                 <h3>{name}</h3>
+                                </>
                                 <a href={url} target="_blank" rel="noopener noreferrer"> <img className={classes.gifDisplay} src={giphy} alt="gif" /></a>
                                 <hr style={{borderColor: "white"}} / >
                             </div>
