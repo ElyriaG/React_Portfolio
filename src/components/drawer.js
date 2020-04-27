@@ -22,6 +22,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import AppsIcon from '@material-ui/icons/Apps';
 
 
 const drawerWidth = 240;
@@ -37,8 +38,8 @@ const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
     },
-    appBar: {
-        background: 'linear-gradient(45deg, #9f0d0d 40%, #000000 90%)',
+    appBar: {           //Elyria Garcia header
+        background: 'linear-gradient(45deg, #000000 20%, #35363f 30%, #000000 30%)',
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -64,6 +65,8 @@ const useStyles = makeStyles(theme => ({
     },
     drawerPaper: {
         width: drawerWidth,
+        backgroundColor: '#e1e1ea',
+
     },
     drawerHeader: {
         display: 'flex',
@@ -71,6 +74,8 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(0, 1),
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
+        backgroundColor: '#e1e1ea',
+
     },
     content: {
         flexGrow: 1,
@@ -183,6 +188,17 @@ export default function LeftDrawer(props) {
                         </ListItem>
                     </Link>
                 </List>
+
+                <Divider />
+
+
+                <Link to="/ApiExamples" style={{ textDecoration: 'none', color: "black" }}>
+                        <ListItem button key={"Api Examples"}>
+                            <ListItemIcon> <AppsIcon /></ListItemIcon>
+                            <ListItemText primary={"Api Examples"} />
+                        </ListItem>
+                    </Link>
+
 
                 <Divider />
 

@@ -1,19 +1,36 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 
 
 
 
 const useStyles = makeStyles(theme => ({
-    typographyHeader: {
-        textAlign: 'center',
-        padding: 10,
-        background: 'linear-gradient(45deg, #808080 10%, #ffffff 40%, #808080 80%)'
+    typographyDiv: {            //parent div of the about me content
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        alignContent: 'center'
     },
-    typographyContent: {
-        padding: 20,
-        background: 'linear-gradient(45deg, #808080 10%, #ffffff 40%, #808080 80%)'
+    aboutMeParentDiv: {
+        marginTop: 80,
+        width: 600
+    },
+    headerColor: {
+        color: "#CAA8E1",
+        textAlign: "center",
+        fontSize: 40
+    },
+    aboutMeContentDiv:  {
+        marginTop: 50
+    },
+    aboutMeContent: {
+        color: "beige",
+        fontSize: 25, 
+        textAlign: "center"
+    },
+    dividerColor: {
+        backgroundColor: 'white'
     }
 }));
 
@@ -21,20 +38,25 @@ function AboutMe() {
     const classes = useStyles();
 
     return (
-        <>
-            <Typography paragraph>
-                <h3 className={classes.typographyHeader}>About Me<br /> &#x2193;</h3>
+        <div className={classes.typographyDiv}>
+        
 
-            </Typography>
-            <Typography paragraph className={classes.typographyContent}>
-                
-                    I love making websites pretty, modern, and accessible.
-               <br />
-                    Recent graduate from the Full Stack Coding Boot Camp program at Northwesten University.
-               
+            <div className={classes.aboutMeParentDiv}>
+                    <h1 className={classes.headerColor}>About Me</h1>
+                    <Divider className={classes.dividerColor}></Divider>
 
-            </Typography>
-        </>
+                    <div className={classes.aboutMeContentDiv}>
+                        <h2 className={classes.aboutMeContent}> 
+                        Currently-stuck-in-quarantine server aspiring to enter the software engineering field. 
+                        <br/>
+                        Focused on Front-End but studied Back-End as well at the Northwestern Coding Bootcamp. 
+                        <br/>
+                        Problem solver, wannabe musician, linguist, baker, and rock climber. And future software engineer.  
+                        </h2>
+                    </div>
+                </div>
+
+        </div>
     )
 };
 

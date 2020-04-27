@@ -5,6 +5,7 @@ import Resume from "./pages/resume";
 import Portfolio from "./pages/portfolio";
 import Contact from "./pages/contact";
 import ErrorPage from "./pages/404Page";
+import ApiExamples from "./pages/apis";
 
 import './style.css'
 
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/resume" component={Resume} />} />
         <Route exact path="/portfolio" component={Portfolio} />} />
         <Route exact path="/contact" component={Contact} />} />
+        <Route exact path="/apiExamples" component={ApiExamples} />} />
         <Route component={ErrorPage} />
         </Switch>
     </Router>
