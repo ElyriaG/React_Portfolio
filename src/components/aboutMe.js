@@ -48,10 +48,12 @@ function AboutMe() {
                     <div className={classes.aboutMeContentDiv}>
                         <h2 className={classes.aboutMeContent}> 
                         Currently-stuck-in-quarantine server aspiring to enter the software engineering field. 
-                        <br/>
+                        <br/><br/>
                         Focused on Front-End but studied Back-End as well at the Northwestern Coding Bootcamp. 
-                        <br/>
-                        Problem solver, wannabe musician, linguist, baker, and rock climber. And future software engineer.  
+                        <br/><br/>
+                        Problem solver, wannabe musician, linguist, baker, and rock climber. 
+                        <br/>· · ·<br/>
+                        And future software engineer.  
                         </h2>
                     </div>
                 </div>
