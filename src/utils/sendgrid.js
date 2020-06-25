@@ -24,7 +24,6 @@ const authKey = process.env.SENDGRID_API_KEY;
 
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(authKey);
-
 const msg = {
   to: 'test@example.com',
   from: 'test@example.com',

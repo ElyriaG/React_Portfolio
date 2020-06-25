@@ -4,9 +4,56 @@
 }
 
 .makeStyles-bigAvatar-1 {
-    margin-top: 20px !important;
+  margin-top: 20px !important;
 }
 
-html, main{
+.makeStyles-root-1 {
+  margin-top: 40px !important;
+}
+
+.MuiFormControl-root .makeStyles-root-1 > * {
+  width: 10ch !important;
+}
+
+.MuiFormControl-root{
+  margin-top: 0 !important;
+}
+
+#aboutYouHeader {
+  margin-top: 120px;
+}
+
+.MuiFormLabel-root {
+  color: beige !important;
+  font-weight: bolder;
+}
+
+#aboutYouH{
+  font-size: 40px;
+}
+
+#AboutYouDiv {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+} 
+
+#aboutYouHeaders {
+ text-align: center;
+ width: 100%;
+ color: #CAA8E1;
+ margin-bottom: 0;
+}
+
+
+ .MuiDivider-root {
+   color: white;
+ }
+
+
+html,
+main {
   background-color: #35363f;
 }
