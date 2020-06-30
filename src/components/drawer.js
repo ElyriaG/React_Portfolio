@@ -23,8 +23,8 @@ import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
 import EmojiEmotionsOutlinedIcon from "@material-ui/icons/EmojiEmotionsOutlined";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import AppsIcon from "@material-ui/icons/Apps";
-import StorageIcon from '@material-ui/icons/Storage';
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import StorageIcon from "@material-ui/icons/Storage";
+// import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 const drawerWidth = 240;
 const LinkedInLink = "https://www.linkedin.com/in/elyriagarcia/";
@@ -200,10 +200,12 @@ export default function LeftDrawer(props) {
           </Link>
           <Link to="/resume" style={{ textDecoration: "none", color: "black" }}>
             <ListItem button key={"Resume"}>
-              <ListItemIcon>
-                {" "}
-                <AssignmentIndIcon />
-              </ListItemIcon>
+              <>
+                <ListItemIcon>
+                  {" "}
+                  <AssignmentIndIcon />
+                </ListItemIcon>
+              </>
               <ListItemText primary={"Resume"} />
             </ListItem>
           </Link>
@@ -212,10 +214,12 @@ export default function LeftDrawer(props) {
             style={{ textDecoration: "none", color: "black" }}
           >
             <ListItem button key={"Contact Me"}>
-              <ListItemIcon>
-                {" "}
-                <MailIcon />
-              </ListItemIcon>
+              <>
+                <ListItemIcon>
+                  {" "}
+                  <MailIcon />
+                </ListItemIcon>
+              </>
               <ListItemText primary={"Contact Me"} />
             </ListItem>
           </Link>
@@ -224,10 +228,12 @@ export default function LeftDrawer(props) {
             style={{ textDecoration: "none", color: "black" }}
           >
             <ListItem button key={"Portfolio"}>
-              <ListItemIcon>
-                {" "}
-                <DeveloperModeIcon />
-              </ListItemIcon>
+              <>
+                <ListItemIcon>
+                  {" "}
+                  <DeveloperModeIcon />
+                </ListItemIcon>
+              </>
               <ListItemText primary={"Portfolio"} />
             </ListItem>
           </Link>
@@ -240,10 +246,12 @@ export default function LeftDrawer(props) {
           style={{ textDecoration: "none", color: "black" }}
         >
           <ListItem button key={"Api Examples"}>
-            <ListItemIcon>
-              {" "}
-              <AppsIcon />
-            </ListItemIcon>
+            <>
+              <ListItemIcon>
+                {" "}
+                <AppsIcon />
+              </ListItemIcon>
+            </>
             <ListItemText primary={"Api Examples"} />
           </ListItem>
         </Link>
@@ -252,10 +260,12 @@ export default function LeftDrawer(props) {
           style={{ textDecoration: "none", color: "black" }}
         >
           <ListItem button key={"Local Storage"}>
-            <ListItemIcon>
-              {" "}
-              <StorageIcon />
-            </ListItemIcon>
+            <>
+              <ListItemIcon>
+                {" "}
+                <StorageIcon />
+              </ListItemIcon>
+            </>
             <ListItemText primary={"Local Storage"} />
           </ListItem>
         </Link>
@@ -271,10 +281,12 @@ export default function LeftDrawer(props) {
           >
             {["LinkedIn"].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>
-                  {" "}
-                  <LinkedInIcon />
-                </ListItemIcon>
+                <>
+                  <ListItemIcon>
+                    {" "}
+                    <LinkedInIcon />
+                  </ListItemIcon>
+                </>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
@@ -287,10 +299,12 @@ export default function LeftDrawer(props) {
           >
             {["GitHub"].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>
-                  {" "}
-                  <GitHubIcon />
-                </ListItemIcon>
+                <>
+                  <ListItemIcon>
+                    {" "}
+                    <GitHubIcon />
+                  </ListItemIcon>
+                </>
                 <ListItemText primary={text} />
               </ListItem>
             ))}

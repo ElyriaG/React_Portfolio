@@ -6,7 +6,7 @@ import Portfolio from "./pages/portfolio";
 import Contact from "./pages/contact";
 import ErrorPage from "./pages/404Page";
 import ApiExamples from "./pages/apis";
-import EmailForm from "./pages/form";
+// import EmailForm from "./pages/form";
 import LocalStorage from "./pages/localStorage";
 
 
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/portfolio" component={Portfolio} />} />
         <Route exact path="/contact" component={Contact} />} />
         <Route exact path="/apiExamples" component={ApiExamples} />} />
-        <Route exact path="/EmailForm" component={EmailForm} />} />
+        {/* <Route exact path="/EmailForm" component={EmailForm} />} /> */}
         <Route exact path="/localStorage" component={LocalStorage} />} />
 
 
