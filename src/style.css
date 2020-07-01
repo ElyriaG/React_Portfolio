@@ -15,7 +15,7 @@
   width: 10ch !important;
 }
 
-.MuiFormControl-root{
+.MuiFormControl-root {
   margin-top: 0 !important;
 }
 
@@ -23,13 +23,28 @@
   margin-top: 120px;
 }
 
+.MuiInputBase-input {
+  color: white !important;
+}
+
 .MuiFormLabel-root {
-  color: beige !important;
+  color: peachpuff !important;
   font-weight: bolder;
 }
 
-#aboutYouH{
+#aboutYouH {
   font-size: 40px;
+}
+
+#aboutYouHeader {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  color: #caa8e1;
+  margin-bottom: 0;
 }
 
 #AboutYouDiv {
@@ -38,20 +53,40 @@
   flex-direction: column;
   align-content: center;
   text-align: center;
-} 
-
-#aboutYouHeaders {
- text-align: center;
- width: 100%;
- color: #CAA8E1;
- margin-bottom: 0;
 }
 
+#aboutYouHeaders {
+  text-align: center;
+  width: 100%;
+  color: #caa8e1;
+  margin-bottom: 0;
+}
 
- .MuiDivider-root {
-   color: white;
- }
+#pageExplanation {
+  color: peachpuff;
+  width: 50%;
+  text-align: center;
+}
 
+#previousSubmissionTitle {
+  color: #caa8e1;
+}
+
+#previousSubmission {
+  text-align: center;
+  color: peachpuff;
+}
+
+#previousSubmissionSpans {
+  color: white;
+}
+
+.MuiDivider-root {
+  background-color: rgba(109, 109, 109, 0.438) !important;
+  width: 50% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
 html,
 main {

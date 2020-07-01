@@ -7,7 +7,7 @@ import LeftDrawer from "./../components/drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
-import SaveIcon from "@material-ui/icons/Save";
+// import SaveIcon from "@material-ui/icons/Save";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,10 +22,6 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     color: "white",
-  },
-  divider: {
-    backgroundColor: "gray",
-    width: "100%",
   },
   button: {
     margin: theme.spacing(1),
@@ -53,29 +49,34 @@ export default function LocalStorage(props) {
   let previousBookSummary = localStorage.getItem("bookSummary");
   let previousMovie = localStorage.getItem("movieTitle");
   let previousYear = localStorage.getItem("movieYear");
-  let previousMovieSummary = localStorage.getItem("movieSummary")
+  let previousMovieSummary = localStorage.getItem("movieSummary");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Submitting info for ${fullName} `);
-    // resetFullName();
-    // resetEmail();
-    // resetAge();
-    // resetBookTitle();
-    // resetBookAuthor();
-    // resetBookSummary();
-    // resetMovieTitle();
-    // resetMovieYear();
-    // resetMovieSummary();
+    alert(`Submitting your information, ${fullName} `);
     localStorage.setItem("fullName", fullName);
-    localStorage.setItem("Email", email);
-    localStorage.setItem("Age", age);
-    localStorage.setItem("Book Title", bookTitle);
-    localStorage.setItem("Book Author", bookAuthor);
-    localStorage.setItem("Book Summary", bookSummary);
-    localStorage.setItem("Movie Title", movieTitle);
-    localStorage.setItem("Movie Year", movieYear);
-    localStorage.setItem("Movie Summary", movieSummary);
+    localStorage.setItem("email", email);
+    localStorage.setItem("age", age);
+    localStorage.setItem("bookTitle", bookTitle);
+    localStorage.setItem("bookAuthor", bookAuthor);
+    localStorage.setItem("bookSummary", bookSummary);
+    localStorage.setItem("movieTitle", movieTitle);
+    localStorage.setItem("movieYear", movieYear);
+    localStorage.setItem("movieSummary", movieSummary);
+  };
+
+  const handleDelete = (event) => {
+    event.preventDefault();
+    alert(`Clearing the data.`);
+    localStorage.removeItem("fullName");
+    localStorage.removeItem("email");
+    localStorage.removeItem("age", age);
+    localStorage.removeItem("bookTitle");
+    localStorage.removeItem("bookAuthor");
+    localStorage.removeItem("bookSummary");
+    localStorage.removeItem("movieTitle");
+    localStorage.removeItem("movieYear");
+    localStorage.removeItem("movieSummary");
   };
 
   return (
@@ -95,6 +96,13 @@ export default function LocalStorage(props) {
               <h1 className={classes.headerText} id="aboutYouH">
                 About You - Local Storage
               </h1>
+              <h3 id="pageExplanation">
+                The information here will be saved on your computers local
+                storage and is not seeable by anyone else - not even me. The
+                information will remain if you refresh the page or even close
+                the window.
+              </h3>
+              <div></div>
             </div>
             <main>
               <form
@@ -116,7 +124,7 @@ export default function LocalStorage(props) {
                 />
                 <TextField id="standard-basic age" label="Age" {...bindAge} />
                 <br /> <br />
-                <Divider className={classes.divider}></Divider>
+                <Divider />
                 <br />
                 <h2 id="aboutYouHeaders">Favorite Book:</h2>
                 <TextField
@@ -135,7 +143,7 @@ export default function LocalStorage(props) {
                   {...bindBookSummary}
                 />
                 <br /> <br />
-                <Divider className={classes.divider}></Divider>
+                <Divider />
                 <br />
                 <h2 id="aboutYouHeaders">Favorite Movie:</h2>
                 <TextField
@@ -164,26 +172,50 @@ export default function LocalStorage(props) {
                 className={classes.button}
                 onClick={handleSubmit}
               >
-                <SaveIcon /> Save
+                Save
               </Button>
             </div>
           </div>
         </div>
-        <h2>Previously Submitted:</h2>
-        <h4>
-          Name: {previousName}
-          <br/>
-          Email: {previousEmail}
-          <br/>
-          Age: {previousAge}
-          <br/>
-          Book: {previousBook} by {previousAuthor}
-          <br/>
-          Summary: {previousBookSummary}
-          <br/>
-          Movie: {previousMovie}, {previousYear}
-          Summary: {previousMovieSummary}
-        </h4>
+        <br />
+        <br />
+        <Divider />
+        <br />
+
+        <div id="previousSubmission">
+          <h2 id="previousSubmissionTitle">Previous Submission:</h2>
+          <h4>
+            Name: <span id="previousSubmissionSpans">{previousName}</span>
+            <br />
+            Email: <span id="previousSubmissionSpans">{previousEmail}</span>
+            <br />
+            Age: <span id="previousSubmissionSpans">{previousAge}</span>
+            <br />
+            Book: <span id="previousSubmissionSpans">{previousBook}</span> by
+            <span id="previousSubmissionSpans"> {previousAuthor}</span>
+            <br />
+            Summary:{" "}
+            <span id="previousSubmissionSpans">{previousBookSummary}</span>
+            <br />
+            Movie:{" "}
+            <span id="previousSubmissionSpans">
+              {" "}
+              {previousMovie} - {previousYear}{" "}
+            </span>
+            <br />
+            Summary:{" "}
+            <span id="previousSubmissionSpans">{previousMovieSummary}</span>
+          </h4>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            className={classes.button}
+            onClick={handleDelete}
+          >
+            Delete
+          </Button>
+        </div>
       </main>
     </div>
   );
