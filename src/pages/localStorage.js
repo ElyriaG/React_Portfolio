@@ -98,9 +98,9 @@ export default function LocalStorage(props) {
               </h1>
               <h3 id="pageExplanation">
                 The information here will be saved on your computers local
-                storage and is not seeable by anyone else - not even me. The
-                information will remain if you refresh the page or even close
-                the window.
+                storage and is not viewable by anyone else - not even me. The
+                information will remain if you refresh the page or close the
+                window.
               </h3>
               <div></div>
             </div>
